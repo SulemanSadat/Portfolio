@@ -1,0 +1,104 @@
+/* Light-themed NotFound */
+
+/* Wrapper */
+.notfound {
+  min-height: 70vh;
+  padding: 4rem 1rem;
+  display: grid;
+  place-items: center;
+}
+
+/* Card */
+.notfound-card {
+  max-width: 700px;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* 404 text */
+.notfound-code {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+/* Title */
+.notfound-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  color: #898989;
+  margin-bottom: 0.75rem;
+}
+
+/* Description */
+.notfound-desc {
+  font-size: 1rem;
+  color: #898989;
+  margin: 0 auto 1.5rem;
+  max-width: 52ch;
+}
+
+/* Button container */
+.notfound-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.notfound-btn {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s ease-in-out;
+  border: 1px solid #ffffff;
+}
+
+/* Primary button */
+.notfound-btn.primary {
+  background: #00000000;
+  color: #fff;
+}
+
+.notfound-btn.primary:hover {
+  background: #00000000;
+}
+
+
+.notfound-btn.outline {
+  background: transparent;
+  color: #ffffff;
+}
+
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive tweak */
+@media (max-width: 480px) {
+  .notfound-card {
+    padding: 2rem;
+  }
+}
