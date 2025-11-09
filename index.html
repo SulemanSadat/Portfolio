@@ -90,10 +90,20 @@
         }
       };
     </script>
-    <script src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script src="https://cdn.weglot.com/weglot.min.js" defer></script>
 
-    <!-- Prevent "Section '/en' not found" alerts -->
+    <!-- Suppress "Section '/en' not found" alerts -->
     <script>
+      const originalAlert = window.alert;
+      window.alert = function(message) {
+        if (typeof message === 'string' && message.includes("Section") && (message.includes("/en") || message.includes("/fa"))) {
+          console.warn("Suppressed alert:", message);
+          return;
+        }
+        originalAlert(message);
+      };
+
+      // Clean hash if it’s only language
       if (window.location.hash === "#/en" || window.location.hash === "#/fa") {
         history.replaceState(null, null, window.location.pathname + window.location.search + "#");
       }
@@ -104,5 +114,7 @@
 
   <body>
     <div id="root"></div>
+
+    <!-- React entry -->
   </body>
 </html>
