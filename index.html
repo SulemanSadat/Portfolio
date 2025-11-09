@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Suleman Sadat - Content Creator, Designer & Developer | Portfolio</title>
-    <link rel="icon" type="image/png" href="%BASE_URL%favicon.jpg" />
+    <link rel="icon" type="image/png" href="./favicon.jpg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
     <meta
@@ -16,7 +17,7 @@
     />
     <meta name="author" content="Suleman Sadat" />
 
-
+    <!-- SEO alternate languages -->
     <link rel="alternate" hreflang="en" href="https://sulemansadat.com/en" />
     <link rel="alternate" hreflang="en-us" href="https://sulemansadat.com/en" />
     <link rel="alternate" hreflang="en-gb" href="https://sulemansadat.com/en" />
@@ -26,7 +27,7 @@
     <link rel="alternate" hreflang="fa-ir" href="https://sulemansadat.com/fa" />
     <link rel="alternate" hreflang="x-default" href="https://sulemansadat.com" />
 
-   
+    <!-- Open Graph -->
     <meta property="og:title" content="Suleman Sadat - Content Creator, Designer & Developer" />
     <meta
       property="og:description"
@@ -40,7 +41,7 @@
     <meta property="og:site_name" content="Suleman Sadat Portfolio" />
     <meta property="og:updated_time" content="2025-01-01T00:00:00Z" />
 
-   
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Suleman Sadat - Content Creator, Designer & Developer" />
     <meta
@@ -49,7 +50,7 @@
     />
     <meta name="twitter:image" content="https://sulemansadat.com/preview.jpg?v=2" />
 
-   
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -62,14 +63,12 @@
           "https://www.linkedin.com/in/suleman-sadat",
           "https://github.com/SulemanSadat",
           "https://twitter.com/Suleman_Sadat_",
-          "https://instagram.com/suleman_sadat_",
-          
-
+          "https://instagram.com/suleman_sadat_"
         ]
       }
     </script>
 
-    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -77,10 +76,10 @@
       rel="stylesheet"
     />
 
-    <link rel="manifest" href="%BASE_URL%manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="#000000" />
 
-   
+    <!-- Weglot -->
     <script>
       window.Weglot = {
         api_key: 'wg_18719620a60babdad7248e13d60c7a723',
@@ -91,14 +90,30 @@
         }
       };
     </script>
-    <script src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script src="https://cdn.weglot.com/weglot.min.js" defer></script>
+
+    <!-- Suppress "Section '/en' not found" alerts -->
+    <script>
+      const originalAlert = window.alert;
+      window.alert = function(message) {
+        if (typeof message === 'string' && message.includes("Section") && (message.includes("/en") || message.includes("/fa"))) {
+          console.warn("Suppressed alert:", message);
+          return;
+        }
+        originalAlert(message);
+      };
+
+      // Clean hash if it’s only language
+      if (window.location.hash === "#/en" || window.location.hash === "#/fa") {
+        history.replaceState(null, null, window.location.pathname + window.location.search + "#");
+      }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
-      <script type="module" src="%BASE_URL%src/main.jsx" defer></script>
 
-   
-
+    <!-- React entry -->
+    <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
