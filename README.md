@@ -137,12 +137,3 @@ This project is **open source** and available under the [MIT License](https://op
 ---
 
 **© 2025 Suleman Sadat. All rights reserved.**
-
-```
-
----
-
-If you want, I can also **make a shorter “GitHub-friendly” version** with badges for technologies, live demo, and social links that looks very clean on the repo front page.  
-
-Do you want me to do that?
-```
