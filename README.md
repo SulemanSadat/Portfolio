@@ -18,7 +18,6 @@ Welcome to the official repository of **Suleman Sadat**, a creative **Full-Stack
 This portfolio is designed to:
 
 - Showcase my **skills and projects** in web development, design, and content creation.
-- Provide an **interactive and multi-language experience** with **English (en)** and **Persian/Farsi (fa)**.
 - Be **fully responsive** for desktop, tablet, and mobile devices.
 - Include **SEO-friendly metadata**, structured data, Open Graph, and Twitter cards for social sharing.
 - Support **custom domains** and **GitHub Pages deployment**.
