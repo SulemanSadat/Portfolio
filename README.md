@@ -60,7 +60,6 @@ Portfolio/
 
 ## 🚀 Features
 
-- **Multi-language support** (English and Farsi)  
 - **Smooth scrolling** to sections like Home, About, Courses, Portfolio, and Contact  
 - **Responsive navigation menu** with mobile hamburger toggle  
 - **SEO optimized** with meta tags, Open Graph, and Twitter cards  
