@@ -2,11 +2,11 @@
 
 [![Portfolio Website](https://img.shields.io/badge/Visit-Portfolio-blue?style=flat-square&logo=github)](https://sulemansadat.github.io/Portfolio/#/en)
 
-<<<<<<< HEAD
+
 Welcome to the official repository of **Suleman Sadat**, a creative **Full-Stack Developer & Content Creator**. This repository hosts my personal portfolio built with **React.js** and **Vite**, showcasing my projects, skills, and professional journey.
-=======
+
 Welcome to the official repository of **Suleman Sadat**, a creative **Content Creator, and Full-Stack Developer**. This repository hosts my personal portfolio built with **React.js** and **Vite**, showcasing my projects, skills, and professional journey.
->>>>>>> recovered-update
+
 
 ---
 
