@@ -124,6 +124,58 @@ html {
   font-weight: 600;
   line-height: 24px;
 }
+
+/* Open to Work */
+.open-to-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  color: #1eb56e;
+  background: rgba(31, 163, 101, 0.12);
+  border: 1px solid rgba(55, 255, 162, 0.556);
+  border-radius: 999px;
+
+  width: fit-content;
+}
+
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #19c37d;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(25, 195, 125, 0.9);
+  animation: pulse 1.6s infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.highlight-name {
+  color: #ffffff;
+  font-weight: bold;
+}
+
 @media (max-width: 1200px) {
   .main-content {
     padding: 60px 30px;

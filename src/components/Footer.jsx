@@ -56,7 +56,7 @@ function Footer() {
                 Suleman Sadat
               </h2>
               <p className="footer-brand-tagline">
-                Digital Product Creator & Entrepreneur
+                Software engineer with 4+ years of experience building production-ready web applications for international clients. Experienced in remote collaboration across time zones using tools like GitHub, Slack, and Notion. Open to fully remote roles with global teams and excited to build impactful products. Open to collaboration and interviews.
               </p>
             </div>
           </div>

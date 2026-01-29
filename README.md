@@ -2,7 +2,7 @@
 
 [![Portfolio Website](https://img.shields.io/badge/Visit-Portfolio-blue?style=flat-square&logo=github)](https://sulemansadat.github.io/Portfolio/#/en)
 
-Welcome to the official repository of **Suleman Sadat**, a creative **Content Creator, UI/UX Designer, and Full-Stack Developer** from Afghanistan. This repository hosts my personal portfolio built with **React.js** and **Vite**, showcasing my projects, skills, and professional journey.
+Welcome to the official repository of **Suleman Sadat**, a creative **Content Creator, and Full-Stack Developer**. This repository hosts my personal portfolio built with **React.js** and **Vite**, showcasing my projects, skills, and professional journey.
 
 ---
 
@@ -18,7 +18,6 @@ Welcome to the official repository of **Suleman Sadat**, a creative **Content Cr
 This portfolio is designed to:
 
 - Showcase my **skills and projects** in web development, design, and content creation.
-- Provide an **interactive and multi-language experience** with **English (en)** and **Persian/Farsi (fa)**.
 - Be **fully responsive** for desktop, tablet, and mobile devices.
 - Include **SEO-friendly metadata**, structured data, Open Graph, and Twitter cards for social sharing.
 - Support **custom domains** and **GitHub Pages deployment**.
@@ -28,7 +27,6 @@ This portfolio is designed to:
 - [React.js](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [React Router v6](https://reactrouter.com/)
-- [React i18next](https://react.i18next.com/) for localization
 - [React Hot Toast](https://react-hot-toast.com/)
 - Weglot for language switching
 - Modern CSS with custom animations and effects
@@ -50,7 +48,7 @@ Portfolio/
 │  ├─ styles/          # CSS files
 │  ├─ App.jsx
 │  ├─ main.jsx
-│  └─ i18n.js          # Localization setup
+│       
 ├─ index.html
 ├─ package.json
 └─ vite.config.js
@@ -61,7 +59,7 @@ Portfolio/
 
 ## 🚀 Features
 
-- **Multi-language support** (English and Farsi)  
+
 - **Smooth scrolling** to sections like Home, About, Courses, Portfolio, and Contact  
 - **Responsive navigation menu** with mobile hamburger toggle  
 - **SEO optimized** with meta tags, Open Graph, and Twitter cards  

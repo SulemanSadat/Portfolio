@@ -14,42 +14,45 @@ function Home() {
           if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
           } else {
-            console.warn(`Section not found: #${hash}`);
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            alert(`Section "${hash}" not found.`);
           }
-        }, 100); 
+        }, 100);
       }
     };
 
-   
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
-
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   return (
     <main className="main-content" id="home">
-      <img 
-        src={profile} 
-        alt="Suleman Sadat Profile" 
+      <img
+        src={profile}
+        alt="Suleman Sadat Profile"
         className="profile-image"
       />
 
       <div className="content-section">
         <div className="text-content">
+
+         
+          <div className="open-to-work">
+            <span className="status-dot"></span>
+            Open to Work
+          </div>
+
           <h1 className="main-heading">
             I'm{' '}
-            <span style={{ color: '#915EFF', fontWeight: 'bold' }}>
+            <span className="highlight-name">
               <Typewriter
                 words={[
                   'Suleman Sadat',
-                  'an Entrepreneur',
                   'Full Stack Developer',
+                  'AI Software Engineer',
                   'Ecommerce Expert',
                 ]}
-                loop={true}
+                loop
                 cursor
                 cursorStyle="|"
                 typeSpeed={30}
@@ -60,8 +63,7 @@ function Home() {
           </h1>
 
           <p className="description">
-            Transforming ideas into reality through innovative solutions and strategic thinking. 
-            Building the future, one venture at a time.
+          building production-ready web applications for international clients.
           </p>
         </div>
 

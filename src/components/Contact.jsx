@@ -119,7 +119,7 @@ function Contact() {
                   </div>
                   <div className="contact-detail-content">
                     <h3>Email</h3>
-                    <p>contact@sulemansadat.com</p>
+                    <p>sadat.fullstack@gmail.com</p>
                   </div>
                 </div>
 

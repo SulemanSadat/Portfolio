@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaCode, FaDesktop, FaMobile } from 'react-icons/fa';
 import '../styles/Portfolio.css';
+import cms from '../assets/cms.png';
+import bot from '../assets/bot.jpg';
+import game from '../assets/game.jpg';
+
 
 function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -30,11 +34,11 @@ function Portfolio() {
     // },
     {
       id: 3,
-      title: 'Content Management System',
-      description: 'Custom CMS for content creators with drag-and-drop editor and SEO optimization.',
-      image: '#06B6D4',
+      title: 'Student Management Platform',
+      description: 'Custom Platform for managing student records, attendance, and grades.',
+      image: cms,
       category: 'web',
-      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind'],
+      technologies: ['React.js', 'PHP', 'MySQL', 'PHP', 'Figma'],
       github: '#',
       live: '#',
       featured: false
@@ -50,28 +54,29 @@ function Portfolio() {
     //   live: '#',
     //   featured: true
     // },
-    {
+     {
       id: 5,
-      title: 'Social Media Mobile App',
-      description: 'Cross-platform social media app with real-time messaging and content sharing.',
-      image: '#FBB024',
-      category: 'mobile',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'WebSocket'],
+      title: 'Game web app',
+      description: 'Modern Game web app with interactive animations and responsive design.',
+       image: game,
+      category: 'web',
+      technologies: ['React.js', 'Adobe XD', 'Figma', 'Principle'],
       github: '#',
       live: '#',
       featured: false
     },
     {
       id: 6,
-      title: 'Portfolio Website Design',
-      description: 'Modern portfolio website with interactive animations and responsive design.',
-      image: '#EF4444',
-      category: 'design',
-      technologies: ['Figma', 'Adobe XD', 'Sketch', 'Principle'],
+      title: 'Telegram Chatbot',
+      description: 'Custom Telegram Chatbot with real-time messaging with AI integration.',
+       image: bot,
+      category: 'mobile',
+      technologies: ['Telegram API', 'PHP', 'Ngrok', 'BotFather', 'MySQL', 'OpenAI API'],
       github: '#',
       live: '#',
       featured: false
-    }
+    },
+   
   ];
 
   const filters = [
@@ -117,7 +122,7 @@ function Portfolio() {
               <div key={project.id} className="project-card">
                 <div 
                   className="project-image" 
-                  style={{ backgroundColor: project.image }}
+                   style={{ backgroundImage: `url(${project.image})` }}
                 >
                   <div className="project-overlay">
                     <div className="project-links">
@@ -144,7 +149,7 @@ function Portfolio() {
           </div>
         </div>
 
-        <div className="portfolio-cta">
+        {/* <div className="portfolio-cta">
           <h3 className="cta-title">Interested in working together?</h3>
           <p className="cta-description">
             Let's discuss your project and create something amazing together.
@@ -152,7 +157,7 @@ function Portfolio() {
           <a href="#contact" className="cta-button">
             Get In Touch
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
