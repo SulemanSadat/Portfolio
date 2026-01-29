@@ -12,7 +12,7 @@ Welcome to the official repository of **Suleman Sadat**, a creative **Content Cr
 
 ## 🌐 Live Demo
 
-- GitHub Pages: [https://sulemansadat.github.io/Portfolio/#/en](https://sulemansadat.github.io/Portfolio/#/en)  
+- GitHub Pages: [https://sulemansadat.github.io/Portfolio/](https://sulemansadat.github.io/Portfolio/#/en)  
 - Custom Domain: [https://sulemansadat.com](https://sulemansadat.com)
 
 ---
