@@ -1,21 +1,13 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import './index.css';
-import './i18n';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
 
-import App from './App';
-import RedirectToLanguage from './components/RedirectToLanguage';
-
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<RedirectToLanguage />} />
-        <Route path="/en/*" element={<App lang="en" />} />
-        <Route path="/fa/*" element={<App lang="fa" />} />
-        <Route path="*" element={<App lang="en" />} />
-      </Routes>
-    </HashRouter>
+    <BrowserRouter basename="/Portfolio">
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );

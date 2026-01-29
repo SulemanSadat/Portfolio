@@ -1,30 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 import logo from "../assets/logo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function Navbar({ lang = "en" }) {
+function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
-  const handleNavClick = (e) => {
+
+  const scrollToId = (id) => {
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSectionClick = (e) => {
     e.preventDefault();
-    const targetId = e.currentTarget.getAttribute("href").replace("#", "");
-    const section = document.getElementById(targetId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+
+    const href = e.currentTarget.getAttribute("href"); // like "#about"
+    const targetId = href?.startsWith("#") ? href.slice(1) : "";
+
     setIsMobileMenuOpen(false);
+
+  
+    if (location.pathname !== "/") {
+      navigate("/");
+
+
+      setTimeout(() => scrollToId(targetId), 0);
+      return;
+    }
+
+    scrollToId(targetId);
   };
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isMobileMenuOpen]);
+
+  
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+    if (!location.hash) return;
+
+    const id = location.hash.slice(1);
+    if (!id) return;
+
+    setTimeout(() => scrollToId(id), 0);
+  }, [location.pathname, location.hash]);
 
   return (
     <header className="navbar">
       <div className="navbar-content">
-        <a href="#home" className="navbar-logo-link" onClick={handleNavClick}>
+        <a href="#home" className="navbar-logo-link" onClick={handleSectionClick}>
           <img src={logo} alt="Suleman Sadat" className="navbar-logo" />
         </a>
 
@@ -39,19 +73,26 @@ function Navbar({ lang = "en" }) {
         </button>
 
         <nav className={`navigation ${isMobileMenuOpen ? "open" : ""}`}>
-          <a href="#home" className="nav-link" onClick={handleNavClick}>
+          <a href="#home" className="nav-link" onClick={handleSectionClick}>
             Home
           </a>
-          <a href="#about" className="nav-link" onClick={handleNavClick}>
-            About
+          <a href="#portfolio" className="nav-link" onClick={handleSectionClick}>
+            Portfolio
           </a>
-          <a href="#courses" className="nav-link" onClick={handleNavClick}>
-            Courses
+          <a href="#pricing" className="nav-link" onClick={handleSectionClick}>
+            Pricing
           </a>
-          <a href="#blog" className="nav-link" onClick={handleNavClick}>
+
+          
+          <Link
+            to="/blog"
+            className="nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Blog
-          </a>
-          <a href="#contact" className="nav-link" onClick={handleNavClick}>
+          </Link>
+
+          <a href="#contact" className="nav-link" onClick={handleSectionClick}>
             Contact
           </a>
         </nav>
@@ -62,7 +103,7 @@ function Navbar({ lang = "en" }) {
           className="mobile-overlay"
           onClick={() => setIsMobileMenuOpen(false)}
           aria-hidden="true"
-        ></div>
+        />
       )}
     </header>
   );

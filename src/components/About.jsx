@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/About.css';
 import suleman1 from '../assets/sulemansadat.jpg';
-import suleman2 from '../assets/2012SulemanSadat.jpg';
+// import suleman2 from '../assets/2012SulemanSadat.jpg';
 import skills from '../assets/Me.jpg';
+import CV from '../assets/Suleman_Sadat.pdf';
 
-import { SiTiktok, SiShopify, SiAmazon, SiEtsy, SiEbay, SiPaypal, SiAliexpress, SiYoutube, SiChatbot, SiInstagram } from 'react-icons/si';
+import { SiTiktok, SiShopify, SiAmazon, SiEtsy, SiEbay, SiPaypal, SiAliexpress, SiYoutube, SiChatbot, SiInstagram, SiHtml5, SiPython, SiReact, SiPhp, SiMysql, SiFigma, SiTradingview, SiWordpress, SiOpenai } from 'react-icons/si';
 
 function About() {
   return (
@@ -21,11 +22,11 @@ function About() {
                 alt="Suleman Sadat Speaking" 
                 className="about-image top-image"
               />
-              <img 
+              {/* <img 
                  src={suleman2} 
                 alt="Suleman 2012" 
                 className="about-image bottom-image"
-              />
+              /> */}
             </div>
           </div>
 
@@ -36,12 +37,11 @@ function About() {
                 <h1 className="journey-title">My Journey</h1>
               </div>
               <p className="about-subtitle">
-                Hey! 👋 I’m Suleman Sadat, a Digital Product Creator passionate about transforming ideas into intuitive, user-friendly solutions.
-               Today, I focus on building Digital Products that make a meaningful impact, combining technical expertise with strategic vision to solve complex challenges in 2026.
+                Hey! 👋 I’m Suleman Sadat, a Software engineer with 4+ years of experience building production-ready web applications for international clients. Experienced in remote collaboration across time zones using tools like GitHub, Slack, and Notion. Open to fully remote roles with global teams and excited to build impactful products. Open to collaboration and interviews.
               </p>
             </div>
 
-            <div className="story-section">
+            {/* <div className="story-section">
               <h2 className="story-title">My Story</h2>
               <p className="story-paragraph">
                   With a strong foundation in Computer Science, I began my journey in graphic design and expanded into full-stack development, allowing me to build digital products that solve real-world problems effectively.
@@ -49,19 +49,19 @@ function About() {
             I'm excited to mentor others who are just starting their creative journey and help them avoid the mistakes I made early on.
             Over the years, I’ve honed skills in creating content and full-stack development.
               </p>
-              {/* <p className="story-paragraph">
-                
-              </p> */}
-            </div>
+            
+            </div> */}
 
             <div className="about-buttons">
-              {/* <button className="download-resume-btn">
-                Download Resume
-              </button> */}
-              <a  href='#' className="view-portfolio-btn">
-                View Portfolio
-              </a>
-            </div>
+                <a
+                  href={CV}
+                  download
+                  className="download-resume-btn"
+                >
+                  Download Resume
+                </a>
+              </div>
+
           </div>
         </div>
 
@@ -88,24 +88,24 @@ function About() {
             </div>
 
             <div className="social-icon tiktok-icon">
-              <SiTiktok />
+              <SiReact />
             </div>
 
             <div className="social-icon behance-icon">
-              <SiShopify />
+              <SiPython />
             </div>
 
             <div className="social-icon amazon-icon">
-              <SiAmazon />
+              <SiOpenai />
             </div>
                 
           
             <div className="social-icon youtube-icon">
-              <SiYoutube />
+              <SiFigma />
             </div>
 
                <div className="social-icon instagram-icon">
-              <SiInstagram />
+              <SiMysql />
             </div>
           </div>
         </div>

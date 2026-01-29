@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { Toaster } from "react-hot-toast";
 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
+import Pricing from "./pages/Pricing";
 import CourseHighlights from "./components/CourseHighlights";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -17,44 +17,30 @@ import Testimonials from "./components/Testimonials";
 const HomePage = () => (
   <>
     <Home />
-    <About />
-    <Portfolio />
-    <CourseHighlights />
     <Testimonials />
+    <Portfolio />
+    <Pricing />
+    <About />
     <Contact />
+    {/* <CourseHighlights /> */}
     <Footer />
   </>
 );
 
-function App({ lang = "en" }) {
-  const { i18n } = useTranslation();
+function App() {
   const location = useLocation();
 
-  // Set language and direction
   useEffect(() => {
-    i18n.changeLanguage(lang);
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
-  }, [lang, i18n]);
+    const hash = location.hash; // e.g. "#about"
+    if (!hash || hash === "#") return;
 
-  // Smooth scroll for hash links
-  useEffect(() => {
-    let hash = location.hash; // e.g., "#/en/about" or "#about"
-    if (!hash) return;
+    const id = hash.slice(1);
+    const section = document.getElementById(id);
 
-    // Remove /en or /fa if present
-    hash = hash.replace(/^#\/(en|fa)/, "");
-
-    if (hash === "" || hash === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    const section = document.getElementById(hash.replace("#", ""));
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  }, [location]);
+  }, [location.hash]);
 
   return (
     <div className="portfolio-container">
@@ -64,15 +50,16 @@ function App({ lang = "en" }) {
         <div className="blur-effect-3"></div>
       </div>
 
-      <Navbar lang={lang} />
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="about" element={<About />} />
-        <Route path="portfolio" element={<Portfolio />} />
-        <Route path="courses" element={<CourseHighlights />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/courses" element={<CourseHighlights />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

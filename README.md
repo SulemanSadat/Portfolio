@@ -2,7 +2,11 @@
 
 [![Portfolio Website](https://img.shields.io/badge/Visit-Portfolio-blue?style=flat-square&logo=github)](https://sulemansadat.github.io/Portfolio/#/en)
 
+<<<<<<< HEAD
 Welcome to the official repository of **Suleman Sadat**, a creative **Full-Stack Developer & Content Creator**. This repository hosts my personal portfolio built with **React.js** and **Vite**, showcasing my projects, skills, and professional journey.
+=======
+Welcome to the official repository of **Suleman Sadat**, a creative **Content Creator, and Full-Stack Developer**. This repository hosts my personal portfolio built with **React.js** and **Vite**, showcasing my projects, skills, and professional journey.
+>>>>>>> recovered-update
 
 ---
 
@@ -27,7 +31,6 @@ This portfolio is designed to:
 - [React.js](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [React Router v6](https://reactrouter.com/)
-- [React i18next](https://react.i18next.com/) for localization
 - [React Hot Toast](https://react-hot-toast.com/)
 - Weglot for language switching
 - Modern CSS with custom animations and effects
@@ -49,7 +52,7 @@ Portfolio/
 │  ├─ styles/          # CSS files
 │  ├─ App.jsx
 │  ├─ main.jsx
-│  └─ i18n.js          # Localization setup
+│       
 ├─ index.html
 ├─ package.json
 └─ vite.config.js
@@ -59,6 +62,8 @@ Portfolio/
 ---
 
 ## 🚀 Features
+
+=======
 
 - **Smooth scrolling** to sections like Home, About, Courses, Portfolio, and Contact  
 - **Responsive navigation menu** with mobile hamburger toggle  

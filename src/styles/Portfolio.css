@@ -24,7 +24,7 @@
   line-height: 72px;
   color: #FFF;
   margin: 0 0 24px 0;
-  background: linear-gradient(135deg, #4318D1 0%, #D946EF 50%, #06B6D4 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -61,7 +61,7 @@
 }
 
 .featured-project-card {
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05); */
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 16px;
   overflow: hidden;
@@ -162,7 +162,7 @@
   font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #915EFF;
+  color: #ffffff;
 }
 
 .all-projects-section {
@@ -201,7 +201,7 @@
 .filter-tab.active {
   background: rgba(145, 94, 255, 0.1);
   border-color: rgba(145, 94, 255, 0.3);
-  color: #915EFF;
+  color: #1596ff;
 }
 
 .projects-grid {
@@ -211,7 +211,7 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05); */
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 16px;
   overflow: hidden;
@@ -226,9 +226,13 @@
 
 .project-image {
   width: 100%;
-  height: 200px;
+
   position: relative;
   overflow: hidden;
+    height: 220px;              /* important */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .project-content {
@@ -267,7 +271,7 @@
   font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 500;
-  color: #915EFF;
+  color: #1596ff;
 }
 
 .portfolio-cta {
@@ -303,7 +307,7 @@
 .cta-button {
   display: inline-flex;
   padding: 16px 32px;
-  background: linear-gradient(135deg, #4318D1 0%, #915EFF 100%);
+  background: linear-gradient(135deg, #00179a 0%, #1673ff 100%);
   border: none;
   border-radius: 12px;
   color: #FFF;
