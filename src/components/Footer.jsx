@@ -38,7 +38,7 @@ function Footer() {
   const navigationLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Projects', href: '#portfolio' },
     { label: 'Contact', href: '#contact' }
   ];
 
