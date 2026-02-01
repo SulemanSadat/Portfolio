@@ -234,7 +234,7 @@ html {
 
   .text-content {
     align-items: center;
-    padding: 0; /* remove left offset that causes left shift */
+    padding: 0;
   }
 
   .main-heading {
