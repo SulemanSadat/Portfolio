@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaCode, FaDesktop, FaMobile } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
 import '../styles/Portfolio.css';
 import cms from '../assets/cms.png';
 import bot from '../assets/bot.jpg';
@@ -8,6 +9,7 @@ import game from '../assets/game.jpg';
 
 function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all');
+  
 
   const projects = [
     // {
@@ -39,8 +41,8 @@ function Portfolio() {
       image: cms,
       category: 'web',
       technologies: ['React.js', 'PHP', 'MySQL', 'PHP', 'Figma'],
-      github: '#',
-      live: '#',
+      github: '',
+      live: '',
       featured: false
     },
     // {
@@ -61,8 +63,8 @@ function Portfolio() {
        image: game,
       category: 'web',
       technologies: ['React.js', 'Adobe XD', 'Figma', 'Principle'],
-      github: '#',
-      live: '#',
+      github: '',
+      live: '',
       featured: false
     },
     {
@@ -72,8 +74,8 @@ function Portfolio() {
        image: bot,
       category: 'mobile',
       technologies: ['Telegram API', 'PHP', 'Ngrok', 'BotFather', 'MySQL', 'OpenAI API'],
-      github: '#',
-      live: '#',
+      github: '',
+      live: '',
       featured: false
     },
    
@@ -90,6 +92,16 @@ function Portfolio() {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
+const handleComingSoon = () => {
+    toast('🔐 Developer permission required to continue', {
+      duration: 1800,
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    });
+  };
 
   return (
     <div className="portfolio-container" id="portfolio">
@@ -126,10 +138,10 @@ function Portfolio() {
                 >
                   <div className="project-overlay">
                     <div className="project-links">
-                      <a href={project.github} className="project-link" aria-label="View GitHub">
+                      <a  className="project-link" aria-label="View GitHub" onClick={handleComingSoon}>
                         <FaGithub />
                       </a>
-                      <a href={project.live} className="project-link" aria-label="View Live Site">
+                      <a  className="project-link" aria-label="View Live Site" onClick={handleComingSoon}>
                         <FaExternalLinkAlt />
                       </a>
                     </div>

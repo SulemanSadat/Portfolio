@@ -4,10 +4,21 @@ import suleman1 from '../assets/sulemansadat.jpg';
 // import suleman2 from '../assets/2012SulemanSadat.jpg';
 import skills from '../assets/Me.jpg';
 import CV from '../assets/Suleman_Sadat.pdf';
+import { toast } from 'react-hot-toast';
 
 import { SiTiktok, SiShopify, SiAmazon, SiEtsy, SiEbay, SiPaypal, SiAliexpress, SiYoutube, SiChatbot, SiInstagram, SiHtml5, SiPython, SiReact, SiPhp, SiMysql, SiFigma, SiTradingview, SiWordpress, SiOpenai } from 'react-icons/si';
 
 function About() {
+  const handleComingSoon = () => {
+    toast('⏳ Downloading…', {
+      duration: 1800,
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    });
+  };
   return (
     <div className="about-container" id='about'>
       <div className="about-main-section">
@@ -56,7 +67,7 @@ function About() {
                 <a
                   href={CV}
                   download
-                  className="download-resume-btn"
+                  className="download-resume-btn" onClick={handleComingSoon}
                 >
                   Download Resume
                 </a>
