@@ -200,7 +200,7 @@
 
 .filter-tab.active {
   background: rgba(145, 94, 255, 0.1);
-  border-color: rgba(145, 94, 255, 0.3);
+  border-color: rgba(94, 105, 255, 0.3);
   color: #1596ff;
 }
 
