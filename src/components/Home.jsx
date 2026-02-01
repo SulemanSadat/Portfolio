@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import profile from "../assets/profile.png";
-import Button from './Button';
+import HireButton from './HireButton'; 
 import '../styles/Home.css';
 
 function Home() {
@@ -77,7 +77,7 @@ function Home() {
         </div>
 
         <div className="button-group">
-       <Button/>
+       <HireButton/>
         
         </div>
       </div>

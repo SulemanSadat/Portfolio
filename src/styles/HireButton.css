@@ -1,0 +1,186 @@
+.ghbRoot {
+  --r: 0.75rem;
+  --blue: #2563eb;
+  --blueGlow: rgba(59, 130, 246, 0.8);
+
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  outline: 0;
+  border-radius: var(--r);
+  padding: 12px 18px;
+
+  overflow: hidden;
+  transition: transform 0.25s ease;
+
+  background:
+    radial-gradient(65.28% 65.28% at 50% 100%, var(--blueGlow) 0%, rgba(59, 130, 246, 0) 100%),
+    linear-gradient(0deg, var(--blue), var(--blue));
+}
+
+.ghbRoot:active {
+  transform: scale(0.95);
+}
+
+.ghbRoot::before,
+.ghbRoot::after {
+  content: "";
+  position: absolute;
+  inset: var(--pad);
+  border-radius: calc(var(--r) - var(--pad));
+  transition: all 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.ghbRoot::before {
+  --pad: 1px;
+  background: linear-gradient(
+    177.95deg,
+    rgba(255, 255, 255, 0.19) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.ghbRoot::after {
+  --pad: 2px;
+  background:
+    radial-gradient(65.28% 65.28% at 50% 100%, var(--blueGlow) 0%, rgba(59, 130, 246, 0) 100%),
+    linear-gradient(0deg, var(--blue), var(--blue));
+}
+
+/* Optional subtle sheen layer (kept minimal; does not change visuals much) */
+.ghbSheen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Corner fold */
+.ghbFold {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+
+  background: radial-gradient(
+    100% 75% at 55%,
+    var(--blueGlow) 0%,
+    rgba(59, 130, 246, 0) 100%
+  );
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: var(--r);
+}
+
+.ghbFold::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150%;
+  height: 150%;
+  transform: rotate(45deg) translateX(0%) translateY(-18px);
+  background: #e8e8e8;
+  pointer-events: none;
+}
+
+.ghbRoot:hover .ghbFold {
+  transform: translate(1rem, -1rem);
+}
+
+/* Spark particles */
+.ghbSparkField {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ghbSpark {
+  position: absolute;
+  bottom: -10px;
+  width: 2px;
+  height: 2px;
+  border-radius: 9999px;
+  background: #fff;
+  pointer-events: none;
+
+  animation-name: ghbFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ghbFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-55px);
+    opacity: 0;
+  }
+}
+
+/* Content */
+.ghbContent {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ghbMark {
+  width: 18px;
+  height: 18px;
+  transition: fill 0.1s linear;
+  fill: none;
+}
+
+.ghbRoot:focus .ghbMark {
+  fill: #fff;
+}
+
+.ghbRoot:hover .ghbMark {
+  fill: transparent;
+  animation:
+    ghbDash 1s linear forwards,
+    ghbFill 0.1s linear forwards 0.95s;
+}
+
+@keyframes ghbDash {
+  from {
+    stroke-dasharray: 0 0 0 0;
+  }
+  to {
+    stroke-dasharray: 68 68 0 0;
+  }
+}
+
+@keyframes ghbFill {
+  to {
+    fill: #fff;
+  }
+}
