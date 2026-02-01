@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import profile from "../assets/profile.png";
+import Button from './Button';
 import '../styles/Home.css';
 
 function Home() {
@@ -24,6 +25,14 @@ function Home() {
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  const goToContact = () => {
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+};
+
+<button className="hireBtn" onClick={goToContact}>
+  ⚡ Hire Me
+</button>
 
   return (
     <main className="main-content" id="home">
@@ -68,7 +77,8 @@ function Home() {
         </div>
 
         <div className="button-group">
-          <a href="#contact" className="secondary-button">Get In Touch</a>
+       <Button/>
+        
         </div>
       </div>
     </main>
