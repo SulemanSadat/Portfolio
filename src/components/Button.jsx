@@ -14,7 +14,7 @@ export default function HireButton({
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
-      // fallback: if not found, update URL hash
+     
       window.location.hash = `#${targetId}`;
     }
   };
