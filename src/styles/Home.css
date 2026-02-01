@@ -27,6 +27,7 @@ html {
   align-items: flex-start;
   gap: 20px;
   flex: 1;
+
 }
 
 .text-content {
@@ -43,19 +44,22 @@ html {
   font-size: 60px;
   font-weight: 700;
   line-height: 75px;
+
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+
   color: #FFF;
   background-color: #FFF;
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-wrap: nowrap;
 
-  /* Glow effect */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.499),
                0 0 20px rgba(255, 255, 255, 0.389),
                0 0 30px rgba(255, 255, 255, 0.274);
 }
+
 
 
 .description {
@@ -172,9 +176,13 @@ html {
 }
 
 .highlight-name {
+  display: inline-block;
+  min-width: 22ch; 
+  white-space: nowrap;
   color: #ffffff;
   font-weight: bold;
 }
+
 
 @media (max-width: 1200px) {
   .main-content {
@@ -200,6 +208,8 @@ html {
   .main-heading {
     font-size: 48px;
     line-height: 60px;
+     text-align: center;
+    white-space: normal; 
   }
 
   .button-group {
@@ -230,6 +240,13 @@ html {
   .main-heading {
     font-size: 32px;
     line-height: 42px;
+      text-align: center;
+    white-space: normal; 
+  }
+   .highlight-name{
+    min-width: 0;          /* remove reserved width on mobile */
+    display: inline;       /* behave like normal text */
+    white-space: normal;   /* allow wrap */
   }
 
   .description {
@@ -271,6 +288,8 @@ html {
   .main-heading {
     font-size: 26px;
     line-height: 34px;
+      text-align: center;
+    white-space: normal; 
   }
 
   .description {

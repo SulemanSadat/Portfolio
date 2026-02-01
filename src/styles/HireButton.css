@@ -1,7 +1,7 @@
 .ghbRoot {
   --r: 0.75rem;
-  --blue: #2563eb;
-  --blueGlow: rgba(59, 130, 246, 0.8);
+  --green: #167c4d;
+  --greenGlow: rgba(30, 181, 110, 0.8); /* glow from main green */
 
   cursor: pointer;
   position: relative;
@@ -18,8 +18,8 @@
   transition: transform 0.25s ease;
 
   background:
-    radial-gradient(65.28% 65.28% at 50% 100%, var(--blueGlow) 0%, rgba(59, 130, 246, 0) 100%),
-    linear-gradient(0deg, var(--blue), var(--blue));
+    radial-gradient(65.28% 65.28% at 50% 100%, var(--greenGlow) 0%, rgba(30, 181, 110, 0) 100%),
+    linear-gradient(0deg, var(--green), var(--green));
 }
 
 .ghbRoot:active {
@@ -48,11 +48,10 @@
 .ghbRoot::after {
   --pad: 2px;
   background:
-    radial-gradient(65.28% 65.28% at 50% 100%, var(--blueGlow) 0%, rgba(59, 130, 246, 0) 100%),
-    linear-gradient(0deg, var(--blue), var(--blue));
+    radial-gradient(65.28% 65.28% at 50% 100%, var(--greenGlow) 0%, rgba(30, 181, 110, 0) 100%),
+    linear-gradient(0deg, var(--green), var(--green));
 }
 
-/* Optional subtle sheen layer (kept minimal; does not change visuals much) */
 .ghbSheen {
   position: absolute;
   inset: 0;
@@ -73,8 +72,8 @@
 
   background: radial-gradient(
     100% 75% at 55%,
-    var(--blueGlow) 0%,
-    rgba(59, 130, 246, 0) 100%
+    var(--greenGlow) 0%,
+    rgba(30, 181, 110, 0) 100%
   );
 
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
@@ -110,14 +109,17 @@
 .ghbSpark {
   position: absolute;
   bottom: -10px;
-  width: 2px;
-  height: 2px;
-  border-radius: 9999px;
-  background: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.6);
+
   pointer-events: none;
+  white-space: nowrap;
 
   animation-name: ghbFloat;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
@@ -130,7 +132,7 @@
     opacity: 0;
   }
   100% {
-    transform: translateY(-55px);
+    transform: translateY(-30px);
     opacity: 0;
   }
 }
